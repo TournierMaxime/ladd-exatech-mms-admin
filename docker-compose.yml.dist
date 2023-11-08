@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  server:
+    image: node:16
+    ports:
+      - "3090:3090"
+    volumes:
+      - .:/var/app
+    environment:
+      - PORT=3090
+    working_dir: /var/app
+    user: node
+    command: npm start

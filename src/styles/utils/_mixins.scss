@@ -1,0 +1,130 @@
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+@mixin flexbox(
+  $direction,
+  $wrap: wrap,
+  $content: normal,
+  $justify: normal,
+  $items: normal,
+  $display: flex
+) {
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $content;
+  justify-content: $justify;
+  align-items: $items;
+  display: $display;
+}
+
+/*
+Largeur et hauteur
+*/
+@mixin widthHeight($w, $h: auto) {
+  width: $w;
+  height: $h;
+}
+
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+@mixin marginPadding(
+  $m-direction: $allDirections,
+  $m-amount: 0,
+  $p-direction: $allDirections,
+  $p-amount: 0
+) {
+  @if $m-direction == $allDirections {
+    margin: $m-amount;
+  } @else if $m-direction == $specificDirections {
+    margin: $m-amount;
+  }
+  @if $p-direction == $allDirections {
+    padding: $p-amount;
+  } @else if $p-direction == $specificDirections {
+    padding: $p-amount;
+  }
+}
+
+/*
+Regroupe les border-radius top ou bottom
+*/
+@mixin borderRadiusTop($size) {
+  border-top-left-radius: $size;
+  border-top-right-radius: $size;
+}
+
+@mixin borderRadiusBottom($size) {
+  border-bottom-left-radius: $size;
+  border-bottom-right-radius: $size;
+}
+
+/*
+Mixin pour les titres ou paragraphes
+*/
+
+@mixin font(
+  $style: normal,
+  $weight: normal,
+  $size: 1em,
+  $line-height: 1,
+  $font-family: Roboto
+) {
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  font-family: $font-family;
+}
+
+/*
+Positionnement d'un élément avec directions 
+*/
+@mixin positionElement(
+  $top: 0em,
+  $right: 0em,
+  $bottom: 0em,
+  $left: 0em,
+  $position: unset
+) {
+  @if $top != 0em {
+    top: $top;
+  }
+  @if $right != 0em {
+    right: $right;
+  }
+  @if $bottom != 0em {
+    bottom: $bottom;
+  }
+  @if $left != 0em {
+    left: $left;
+  }
+  position: $position;
+}
+
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+@mixin backgroundAuto($bgColor) {
+  @if lightness($bgColor) > 50% {
+    background-color: $bgColor !important;
+    color: black !important;
+    a {
+      color: black !important;
+    }
+  } @else {
+    background-color: $bgColor !important;
+    color: white !important;
+    a {
+      color: white !important;
+    }
+  }
+}
+
+//Utilisation dans les media queries
+
+@mixin responsiveContentCentered {
+  max-width: 1024px;
+  @include marginPadding($allDirections, 1em auto, $allDirections, 0);
+}

@@ -1,0 +1,107 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  body {
+    margin: 0;
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .p-menubar {
+    background-color: rgb(255, 255, 255) !important;
+    border: none !important;
+    border-radius: 0% !important;
+    box-shadow: 0 4px 2px -2px rgba(85, 85, 85, 0.21);
+  }
+  
+  .p-breadcrumb {
+    background-color: #61dafb00 !important;
+    border: none !important;
+  }
+  
+  .p-card {
+    margin: 5px 15px 0 15px;
+    padding: 0 !important;
+    .p-card-content {
+      padding: 0.5em 1em !important;
+    }
+    .p-card-body {
+      padding: 0 !important;
+    }
+  }
+  
+  .headerCardImg {
+    width: 10em !important;
+    object-fit: cover !important;
+  }
+  
+  .userMenu {
+    width: 15em !important;
+  }
+  
+  .custom-menu.active {
+    background-color: #ececec !important;
+    color: #ffffff !important;
+  }
+  
+  .custom-menu.active:focus,
+  .custom-menu.active:hover {
+    background-color: #ececec !important;
+    color: #ffffff !important;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
